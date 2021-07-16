@@ -1,0 +1,23 @@
+{
+  "name": "zenn",
+  "version": "1.0.0",
+  "description": "Ostracon development note for Zenn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torao/zenn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torao/zenn/issues"
+  },
+  "homepage": "https://github.com/torao/zenn#readme",
+  "dependencies": {
+    "zenn-cli": "^0.1.91"
+  }
+}
