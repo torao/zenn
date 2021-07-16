@@ -1,14 +1,14 @@
 ---
 title: "How to build the Ostracon documents"
-emoji: "🤔"
+emoji: "🏺"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["ostracon"]
+topics: ["ostracon", "line", "blockchain", "tendermint"]
 published: true
 ---
 
-# [Ostracon](https://github.com/line/ostracon) v1.0 でのドキュメントビルド方法
+# [Ostracon v1.0](https://github.com/line/ostracon) でのドキュメントビルド方法
 
-Tendermint は静的サイトジェネレータに Vue.js のブログサイト向けフレームワークの Vuepress を使っているらしい。それで `docs/` ディレクトリの下に Markdown で記述したドキュメントを保存しておけばいい感じの HTML ファイルに変換してくれる。
+Tendermint は Vue.js のブログサイト向けフレームワークであるところの [VuePress](https://vuepress.vuejs.org/) を静的サイトジェネレータとして使っているらしい。それを fork した Ostracon も `docs/` ディレクトリの下に Markdown で記述したドキュメントを作成すればいい感じの HTML ファイルに変換してくれる。
 
 ## ドキュメントのビルド
 
@@ -32,6 +32,16 @@ Ostracon 開発ディレクトリに移動して `make build-docs` を実行す�
 正常終了すれば `~/output` にドキュメントが生成されている。
 
 `docs/versions` に行を分けて複数のブランチを記述しておけば、それらのブランチごとに `~/output/<branch>` というディレクトリに出力される。
+
+```
+cd docs && \
+while read p; do \
+  (git checkout $${p} -- . && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
+  mkdir -p ~/output/$${p} ; \
+  cp -r .vuepress/dist/* ~/output/$${p}/ ; \
+  cp ~/output/$${p}/index.html ~/output ; \
+done < versions ;
+```
 
 ## ブラウザで確認
 
