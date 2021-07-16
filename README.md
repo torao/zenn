@@ -1,2 +1,3 @@
-# ostracon-devnote
-Ostracon development note for Zenn
+# zenn
+
+[zenn](https://zenn.dev/torao) の記事を保存するためのリポジトリ。
