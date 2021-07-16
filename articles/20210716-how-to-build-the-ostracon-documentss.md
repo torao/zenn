@@ -33,16 +33,6 @@ Ostracon 開発ディレクトリに移動して `make build-docs` を実行す�
 
 `docs/versions` に行を分けて複数のブランチを記述しておけば、それらのブランチごとに `~/output/<branch>` というディレクトリに出力される。
 
-```
-cd docs && \
-while read p; do \
-  (git checkout $${p} -- . && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
-  mkdir -p ~/output/$${p} ; \
-  cp -r .vuepress/dist/* ~/output/$${p}/ ; \
-  cp ~/output/$${p}/index.html ~/output ; \
-done < versions ;
-```
-
 ## ブラウザで確認
 
 `~/output` ディレクトリに移動する。
@@ -59,7 +49,6 @@ import Express from 'express'
 
 const app = Express();
 app.use(Express.static('./'))
-
 app.listen(8001, () => {
     console.log('server running on: http://localhost:8001')
 })
