@@ -3,7 +3,7 @@ title: "How to build the Ostracon documents"
 emoji: "🤔"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ostracon"]
-published: false
+published: true
 ---
 
 # [Ostracon](https://github.com/line/ostracon) v1.0 でのドキュメントビルド方法
