@@ -6,7 +6,7 @@ topics: ["ostracon"]
 published: true
 ---
 
-# [Ostracon](https://github.com/line/ostracon) v1.0 でのドキュメントビルド方法
+# [Ostracon v1.0](https://github.com/line/ostracon) でのドキュメントビルド方法
 
 Tendermint は静的サイトジェネレータに Vue.js のブログサイト向けフレームワークの Vuepress を使っているらしい。それで `docs/` ディレクトリの下に Markdown で記述したドキュメントを保存しておけばいい感じの HTML ファイルに変換してくれる。
 

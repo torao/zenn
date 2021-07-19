@@ -1,7 +1,7 @@
 {
   "name": "zenn",
   "version": "1.0.0",
-  "description": "Ostracon development note for Zenn",
+  "description": "Blog article repository for Zenn",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/torao/zenn/issues"
   },
-  "homepage": "https://github.com/torao/zenn#readme",
+  "homepage": "https://zenn.dev/torao",
   "dependencies": {
     "zenn-cli": "^0.1.91"
   }
