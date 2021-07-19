@@ -1,14 +1,14 @@
 ---
 title: "How to build the Ostracon documents"
-emoji: "🤔"
+emoji: "🏺"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["ostracon"]
+topics: ["ostracon", "line", "blockchain", "tendermint"]
 published: true
 ---
 
 # [Ostracon v1.0](https://github.com/line/ostracon) でのドキュメントビルド方法
 
-Tendermint は静的サイトジェネレータに Vue.js のブログサイト向けフレームワークの Vuepress を使っているらしい。それで `docs/` ディレクトリの下に Markdown で記述したドキュメントを保存しておけばいい感じの HTML ファイルに変換してくれる。
+Tendermint は Vue.js のブログサイト向けフレームワークであるところの [VuePress](https://vuepress.vuejs.org/) を静的サイトジェネレータとして使っているらしい。それを fork した Ostracon も `docs/` ディレクトリの下に Markdown で記述したドキュメントを作成すればいい感じの HTML ファイルに変換してくれる。
 
 ## ドキュメントのビルド
 
@@ -49,7 +49,6 @@ import Express from 'express'
 
 const app = Express();
 app.use(Express.static('./'))
-
 app.listen(8001, () => {
     console.log('server running on: http://localhost:8001')
 })
