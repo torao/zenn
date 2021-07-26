@@ -12,7 +12,7 @@ Tendermint は Vue.js のブログサイト向けフレームワークである�
 
 ## ドキュメントのビルド
 
-ドキュメントのビルドには node.js が必要なのでインストールしておく。
+ドキュメントのビルドには [node.js](https://nodejs.org/) が必要なのでインストールしておく。
 
 ```
 % npm --version
@@ -38,7 +38,7 @@ Ostracon 開発ディレクトリに移動して `make build-docs` を実行す�
 `~/output` ディレクトリに移動する。
 
 ```
-% cd ~/output/main
+% cd ~/output
 ```
 
 ローカルでの確認だけなのでここでは簡易 HTTPd として express を使っておく。まだインストールしていなければ npm でインストールしてスクリプト `httpd.mjs` を作成する。
@@ -61,9 +61,9 @@ httpd を起動してブラウザから [http://localhost:8001/main/](http://loc
 % node httpd.mjs
 ```
 
-## 設定の拡張
+## HTML に拡張を加える
 
-数式を使用するために MathJax の JavaScript を追加した。このような JS や CSS フレームワークの追加は `.vuepress/config.js` の `head` エントリに HTML タグのように入れれば良いらしい。
+JS や CSS フレームワークを追加したい場合は `.vuepress/config.js` の [`head` エントリ](https://vuepress.vuejs.org/config/#head)に HTML タグのように入れれば良いらしい。ここではドキュメント内で数式を記述可能にするために MathJax を導入した。
 
 ```json
 head: [
