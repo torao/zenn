@@ -6,9 +6,9 @@ topics: ["ostracon", "line", "blockchain", "tendermint"]
 published: true
 ---
 
-# [Ostracon v1.0](https://github.com/line/ostracon) でのドキュメントビルド方法
+# [ostracon1.0](https://github.com/line/ostracon): ドキュメントビルド方法
 
-Tendermint は Vue.js のブログサイト向けフレームワークであるところの [VuePress](https://vuepress.vuejs.org/) を静的サイトジェネレータとして使っているらしい。それを fork した Ostracon も `docs/` ディレクトリの下に Markdown で記述したドキュメントを作成すればいい感じの HTML ファイルに変換してくれる。
+Tendermint は Vue.js のブログサイト向けフレームワークであるところの [VuePress](https://vuepress.vuejs.org/) を静的サイトジェネレータとして使っている。それを fork した Ostracon も `docs/` ディレクトリの下に Markdown で記述したドキュメントを作成すれば HTML のサイトを作成してくれる。
 
 ## ドキュメントのビルド
 
@@ -19,8 +19,6 @@ Tendermint は Vue.js のブログサイト向けフレームワークである�
 6.14.13
 ```
 
-ドキュメントを作成する `make build-docs` コマンドは `docs/versions` ファイルに記述しているブランチをチェックアウトしようとするので、修正中のファイルがあるなら commit するなり stash するなりしておく。
-
 Ostracon 開発ディレクトリに移動して `make build-docs` を実行すればドキュメントが生成される。
 
 
@@ -29,9 +27,9 @@ Ostracon 開発ディレクトリに移動して `make build-docs` を実行す�
 % make build-docs
 ```
 
-正常終了すれば `~/output` にドキュメントが生成されている。
+Tendermint の `Makefile` では `make build-docs` で (`docs/versions` に記述している) `main` ブランチをチェックアウトする動作だった。これによってローカルの commit 前の更新が上書きされてしまうため、現在のローカルの状態に対して実行するように修正した。
 
-`docs/versions` に行を分けて複数のブランチを記述しておけば、それらのブランチごとに `~/output/<branch>` というディレクトリに出力される。
+正常終了すれば `~/output` にドキュメントが生成されている。
 
 ## ブラウザで確認
 
@@ -41,7 +39,11 @@ Ostracon 開発ディレクトリに移動して `make build-docs` を実行す�
 % cd ~/output
 ```
 
-ローカルでの確認だけなのでここでは簡易 HTTPd として express を使っておく。まだインストールしていなければ npm でインストールしてスクリプト `httpd.mjs` を作成する。
+生成される HTML のパス構成はサイトのトップからを想定しているため、表示を確認するには `~/output` を docroot とする HTTP サーバが必要となる。ローカルでの確認だけなのでここでは簡易 HTTPd として express を使っておく。まだインストールしていなければ npm でインストールしてスクリプト `httpd.mjs` を作成する。
+
+```
+% npm install express
+```
 
 
 ```js
@@ -57,13 +59,12 @@ app.listen(8001, () => {
 httpd を起動してブラウザから [http://localhost:8001/main/](http://localhost:8001/main/) を表示する。
 
 ```
-% npm install express
 % node httpd.mjs
 ```
 
 ## HTML に拡張を加える
 
-JS や CSS フレームワークを追加したい場合は `.vuepress/config.js` の [`head` エントリ](https://vuepress.vuejs.org/config/#head)に HTML タグのように入れれば良いらしい。ここではドキュメント内で数式を記述可能にするために MathJax を導入した。
+JS や CSS フレームワークを追加したい場合は `.vuepress/config.js` の [`head` エントリ](https://vuepress.vuejs.org/config/#head)に HTML タグのように入れれば良い。ここではドキュメント内で数式の記述ができるようにするために MathJax を導入している。
 
 ```json
 head: [
