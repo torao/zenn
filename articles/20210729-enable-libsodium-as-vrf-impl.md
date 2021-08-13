@@ -41,4 +41,5 @@ docker run --rm -v $(pwd):/app -w /app golangci/golangci-lint:v1.31 golangci-lin
 2. libsodium をビルドする。
     * macos: `make prepare-libsodium-linux` からの `make libsodium`
     * linux: docker コンテナからビルド
-        1. 
+        1. `docker run --rm -it -v \'pwd\':/opt ubuntu:latest bash`
+        2. `apt-get update`
