@@ -1,5 +1,5 @@
 ---
-title: "How to Read Papers PDF like e-books on Kindle"
+title: "How to Read a Paper PDF like e-books on Kindle"
 emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["PDF", "kindle"]
