@@ -2,7 +2,7 @@
 title: "How to Read Papers PDF like e-books on Kindle"
 emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["paper"]
+topics: ["PDF", "kindle"]
 published: true
 ---
 
