@@ -14,7 +14,7 @@ published: true
 
 ![Paper on Kindle](/images/how-to-read-pdf-paper-on-kindle/paper-on-kindle.gif)
 
-## Kindle 用に変換する手順
+## Kindle 向けに変換する手順
 
 ### 1. PDF を Word に変換する
 
@@ -25,22 +25,22 @@ published: true
 [Amazon のサイト](https://www.amazon.co.jp/)の [アカウント & リスト]-[コンテンツと端末の管理]-[設定] で
 「パーソナルドキュメント設定」を開きます。ここで自分のメールアドレスが「承認済み Eメールアドレス一覧」に設定されていない場合はメールアドレスを追加してください。
 
-先ほど作成した docx 形式のファイルを「Send-to-Kindle Eメールアドレス」の宛先に送信します。
+先ほど作成した docx 形式のファイルをメールに添付して「Send-to-Kindle Eメールアドレス」の宛先に送信します。
 
 ![Kindle Settings](/images/how-to-read-pdf-paper-on-kindle/kindle-settings.png)
 
 ### 3. 文書の追加を承認する
 
-メールを送信すると Amazon アカウントに登録しているメールアドレス宛てに確認のメールが届くので、メール中の URL にアクセスして承認します。
+メールを送信すると Amazon アカウントに登録しているメールアドレス宛てに確認のメールが届きます。メール中の URL にアクセスして承認してください。
 
 ![Approve Document](/images/how-to-read-pdf-paper-on-kindle/approval.png)
 
 ### 4. Kindle で確認する
 
-承認を行って Kindle を同期すると、先ほど送信した docx ファイルがライブラリに現れているはずです。
+承認を行ったあとに Kindle を同期すると、先ほど送信した docx ファイルがライブラリに現れているはずです。
 
 ![Sync and Download Document](/images/how-to-read-pdf-paper-on-kindle/complete.png)
 
 ## どうにもならない問題点
 
-2010 年以前に作成された古い形式の PDF は Word で読み込んだときに表示崩れを起こすことがあります。特に 19xx 年代の論文は紙面を画像としてスキャンしたものがほとんどで Word でもテキストとして認識できません。そのまま Kindle に送信しても期待した表示にはならないので諦めましょう。
+2010 年以前に作成された古い形式の PDF は Word で読み込んだときに表示崩れを起こすことがあります。特に 19xx 年代の論文は紙面を画像としてスキャンしたものがほとんどで Word でもテキストとして認識できません。そのまま Kindle に送信しても期待した表示にはならないので諦めましょう😇
