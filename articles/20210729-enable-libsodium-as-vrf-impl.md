@@ -2,7 +2,7 @@
 title: "Enable libsodium as VRF Implementation"
 emoji: "🏺"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["ostracon", "line", "blockchain", "cryptography"]
+topics: ["ostracon", "line", "blockchain", "cryptography", "VRF"]
 published: false
 ---
 
