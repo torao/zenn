@@ -2,13 +2,13 @@
 title: "10分で論文略読: Asynchronous Byzantine Agreement Protocols (1987)"
 emoji: "🛋️"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["分散システム"]
+topics: ["分散システム","BFT"]
 published: true
 ---
 
 # Asynchronous Byzantine Agreement Protocols
 
-Lamport, Shostak, Pease の [The Byzantine General Problem](20230108-10min-the-byzantine-generals-problem.md) (1983) では許容可能な障害プロセス数を $t$ としたときに全プロセス数が $n \le 3f$ ではビザンチン合意を達成することができないという下限が証明されている。この論文の Fig.4 はその下限である $n=3f+1$ でビザンチン合意を達成した最初の非同期プロトコルである (Bracha Broadcast とも呼ばれる)。
+Lamport, Shostak, Pease の [The Byzantine General Problem](20230108-10min-the-byzantine-generals-problem) (1983) では許容可能な故障プロセス数を $t$ としたときに全プロセス数が $n \le 3f$ ではビザンチン合意を達成することができないという下限が証明されている。この論文の Fig.4 はその下限である $n=3f+1$ でビザンチン合意を達成した最初の非同期プロトコルである (Bracha Broadcast とも呼ばれる)。
 
 > BRACHA, Gabriel. Asynchronous Byzantine agreement protocols. _Information and Computation_, 1987, 75.2: 130-143.
 
@@ -21,9 +21,7 @@ Lamport, Shostak, Pease の [The Byzantine General Problem](20230108-10min-the-b
 - Agreement: すべての正常なプロセスは同じ値を決定する
 - Validity: すべての正常なプロセスが同じ値 $v$ で開始すると、すべての正常なプロセスは値 $v$ で決定する。
 
-全 $n$ 個のプロセスのうち $t$ 個の故障プロセスを想定。メッセージの紛失や捏造がなく、送信者を特定できる完全グラフネットワークを想定する。
-
-同期システムでのプロトコルの動きは各プロセスの初期値と故障プロセスの動作で決まる。非同期システムではそれにスケジューラーを導入する。スケジューラーは敵対的で、各プロセスの $n$ 個のメッセージのうちどの $n-t$ 個を受信させるかをラウンドごとに決めることができる。
+全 $n$ 個のプロセスのうち $t$ 個の故障プロセスを想定。まずメッセージの紛失や捏造がなく、送信者を特定できる完全グラフネットワークを想定する。同期システムでのプロトコルの動きは各プロセスの初期値と故障プロセスの動作で決まる。非同期システムではそれにスケジューラーを導入する。スケジューラーは敵対的で、各プロセスの $n$ 個のメッセージのうちどの $n-t$ 個を受信させるかをラウンドごとに決めることができる。
 
 決定論的 Termination は非同期環境では FLP Impossibility により達成できない。*ランダム化されたコンセンサス*は FLP Impossibility を回避するためにランダムさを加えて確率的 Termination 特性を持つ。
 
