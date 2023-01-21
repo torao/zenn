@@ -8,7 +8,7 @@ published: true
 
 # Asynchronous Byzantine Agreement Protocols
 
-Lamport, Shostak, Pease の [The Byzantine General Problem](20230108-10min-the-byzantine-generals-problem) (1983) ではシステムが許容可能な故障プロセス数を $t$ としたときに全プロセス数が $n \le 3t$ ではビザンチン合意を達成することができないという下限が証明されている。この論文の Fig.4 ではその下限である $n=3f+1$ においてビザンチン合意を達成できる(おそらく)最初の非同期プロトコルを提示している (これは Bracha Broadcast とも呼ばれる)。
+Lamport, Shostak, Pease の [The Byzantine General Problem](20230108-10min-the-byzantine-generals-problem) (1983) ではシステムが許容可能な故障プロセス数を $t$ としたときに全プロセス数が $n \le 3t$ ではビザンチン合意を達成することができないという下限が証明されている。この論文はその下限の $n=3f+1$ でビザンチン合意を達成できる(おそらく)最初の非同期プロトコルを提示し、概ねその証明や背景説明で構成されている。その核心のプロトコルは Fig.4 に示されていて Bracha Broadcast とも呼ばれる。
 
 > BRACHA, Gabriel. Asynchronous Byzantine agreement protocols. _Information and Computation_, 1987, 75.2: 130-143.
 
