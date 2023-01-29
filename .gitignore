@@ -2,3 +2,6 @@
 .history/
 .obsidian/
 node_modules/
+.$*
+*.bkp
+
