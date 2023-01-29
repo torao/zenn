@@ -2,7 +2,7 @@
 title: "10分で論文略読: Brahms: 動的ネットワークでのランダムなノードサンプリング (2008)"
 emoji: "🛋️"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["分散システム","BFT"]
+topics: ["分散システム","BFT","ランダムサンプリング","ストリーム処理"]
 published: true
 ---
 
