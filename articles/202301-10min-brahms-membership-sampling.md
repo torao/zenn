@@ -66,7 +66,7 @@ class Sampler:
 
 $h$ は同じ ID に対してどのような値が出力されるかを Sampler ごとに (さらに初期化されるごとに) ランダムに変える必要があります。したがって実際は `salt` のようなハイパーパラメータを持たせたハッシュ関数と見なすことができます。
 
-論文では乱数の衝突は無視できる程度としています。
+これは、ある数学的特徴を持ったハッシュ関数の集合からランダムに一つ選んだハッシュ関数を使うことと同じで、他の Sampler との衝突を最小限にすることができます (このような手法は Universal Hashing と呼ばれます)。論文ではこのような衝突は無視できる程度として議論の対象外としていますが、サンプルが少ないと衝突も十分起きるでしょう。
 
 ### 死活監視
 
@@ -132,12 +132,11 @@ Brahms では、過去に観測され死活監視されている Sampler ベク�
 
 ## 個人的な所感
 
-
 **プライベートネットワークへの適用**: ノード数が概ね $N$ の、ビザンチン故障を想定しない小～中規模ネットワークであっても、$n=m=N$ とした Brahms を適用すればノードの動的な参加と離脱をサポートする"ほぼ"全結合のネットワークを構成することができるんじゃないかな。
 
 **Sybil 攻撃耐性**: 参加に制限のないオープンなネットワークでは 1 台の物理コンピュータを 1000 ノードに見せかけることは難しくない。Brahms はこのような Sybil 攻撃ですべての (あるいは一部の) 正常なノードのビュー更新を阻害させることができるように見える。追加の制約的な設計 (例えば承認参加制や push のためには proof-of-work が必要など) や "運用でカバー" できる何かがなければ P2P のような匿名のオープン環境への適用は難しいかなと想うところ。もちろん、良性の任意障害のみを想定するネットワークはその限りではない。
 
-**他の確率的データ構造と併用**: 例えば Gossipping で収集したノード ID を Sampler ベクトルに加えて HyperLogLog にも適用すると、ネットワークに存在するノード数の概算を得ることができます。HLL のような確率的データ構造は大規模データ処理でしばしば使われています。Gossipping はストリームデータ処理のデータソースとみなすことができるため min-wise independent permutation や HyperLogLog のような確率的データ構造とは相性が良さそうです。
+**他の確率的データ構造と併用**: 例えば Gossipping で収集したノード ID を Sampler ベクトルだけではなく HyperLogLog にも適用すると、ネットワークに接続しているノード数の概算値を得ることができます。HLL のような確率的データ構造は大規模データ処理でしばしば使われています。Gossipping をストリームデータ処理のデータソースとみなすと min-wise independent permutation や HyperLogLog のような確率的データ構造と相性が良さそうな気がします。
 
 [^1]: BORTNIKOV, Edward, et al. Brahms: Byzantine resilient random membership sampling. In: _Proceedings of the twenty-seventh ACM symposium on Principles of distributed computing_. 2008. p. 145-154.
 [^2]: BRODER, Andrei Z., et al. Min-wise independent permutations. In: _Proceedings of the thirtieth annual ACM symposium on Theory of computing_. 1998. p. 327-336.
