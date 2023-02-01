@@ -106,13 +106,13 @@ Brahms のノードが持つ状態とデータの流れ、それを実行する 
 
 ### Push Flooding 攻撃
 
-一般的な Gossipping での push flooding 攻撃は、大量の不正な情報を push で伝達してシステム全体をポイズニングします。こうなるとシステム上の正しい情報は pull でしか伝達されなくなり、正しい情報の占める割合は指数関数的に減衰します。
+一般的な Gossipping での push flooding 攻撃は、大量の不正な情報を push で伝達してシステム全体をポイズニングします。こうなるとシステム上の正しい情報は pull でしか伝達されなくなり、システムで正しい情報の占める割合は指数関数的に減衰します。
 
-一方、Brams の `push_request` は自身のノード ID のみを伝達できる制限された送信です。大量の故障ノード ID を push で拡散することができないため、push flooding のような手法での攻撃は困難です。
+一方、Brams の `push_request` は自身のノード ID のみを伝達できる制限された送信です。大量の故障ノード ID を push で拡散することができないため、push flooding のような手法での攻撃は難しくなります。
 
 ### Balanced 攻撃
 
-Balanced 攻撃は、悪意的なノードがネットワークの広域に `push_request` を送信して、すべてのノードのビューに悪意的なノードが含まれるように仕向けます。このような状況は、時間の経過と共にシステム全体に流通する故障 ID の比率はある固定値に収束します。そしてパラメータを調整すればこの固定値を 1 より小さくすることができます。したがって、このような Balanced 攻撃でネットワーク全体の効率を低下させることはできますが、ネットワークを分断したり特定のノードを孤立させることはできません。
+Balanced 攻撃は、悪意的なノードがネットワークの広域に `push_request` を送信して、すべてのノードのビューに悪意的なノードが含まれるように仕向けます。このような状況は、時間の経過と共にシステム全体に流通する故障 ID の比率がある固定値に収束します。そしてパラメータを調整すればこの固定値を 1 より小さくすることができます。したがって、このような Balanced 攻撃でネットワーク全体の効率を低下させることはできますが、ネットワークを分断したり特定のノードを孤立させることは… 調整次第です。
 
 ### 標的型攻撃
 
@@ -136,7 +136,7 @@ Brahms では、過去に観測され死活監視されている Sampler ベク�
 
 **Sybil 攻撃耐性**: 参加に制限のないオープンなネットワークでは 1 台の物理コンピュータを 1000 ノードに見せかけることは難しくない。Brahms はこのような Sybil 攻撃ですべての (あるいは一部の) 正常なノードのビュー更新を阻害させることができるように見える。追加の制約的な設計 (例えば承認参加制や push のためには proof-of-work が必要など) や "運用でカバー" できる何かがなければ P2P のような匿名のオープン環境への適用は難しいかなと想うところ。もちろん、良性の任意障害のみを想定するネットワークはその限りではない。
 
-**他の確率的データ構造と併用**: 例えば Gossipping で収集したノード ID を Sampler ベクトルだけではなく HyperLogLog にも適用すると、ネットワークに接続しているノード数の概算値を得ることができます。HLL のような確率的データ構造は大規模データ処理でしばしば使われています。Gossipping をストリームデータ処理のデータソースとみなすと min-wise independent permutation や HyperLogLog のような確率的データ構造と相性が良さそうな気がします。
+**他の確率的データ構造と併用**: 例えば Gossipping で収集したノード ID を Sampler ベクトルだけではなく HyperLogLog にも適用すると、ネットワークに接続しているノード数の概算値を得ることができます。HLL のような確率的データ構造は大規模データ処理でしばしば使われています。Gossipping をストリームデータ処理のデータソースとみなすと min-wise independent permutation や HyperLogLog のような確率的データ構造とは相性が良さそうな気がします。
 
 [^1]: BORTNIKOV, Edward, et al. Brahms: Byzantine resilient random membership sampling. In: _Proceedings of the twenty-seventh ACM symposium on Principles of distributed computing_. 2008. p. 145-154.
 [^2]: BRODER, Andrei Z., et al. Min-wise independent permutations. In: _Proceedings of the thirtieth annual ACM symposium on Theory of computing_. 1998. p. 327-336.
