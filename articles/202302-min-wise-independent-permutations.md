@@ -1,14 +1,14 @@
 ---
-title: "min-wise 独立性による文書類似度の算出とランダムサンプリング手法"
+title: "min-wise 独立性による文書類似度の算出とランダムサンプリング手法 (1998)"
 emoji: "🛋️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [ランダムサンプリング","大規模データ処理","自然言語処理","アルゴリズム"]
 published: true
 ---
 
-# min-wise 独立性による文書類似度の算出とランダムサンプリング手法 (1998)
+# Min-Wise Independent Permutations
 
-[Brahms](202301-10min-brahms-membership-sampling)[^2] の論文に出てきた Min-Wise Independent Permutations[^1] (1998) というアルゴリズムが興味深かったのでその論文を読み解いたまとめと昔話。
+[Brahms サンプリング](202301-10min-brahms-membership-sampling)[^2] の論文に出てきた Min-Wise Independent Permutations[^1] (1998) というアルゴリズムが興味深かったのでその論文を読み解いたまとめと昔話。
 
 論文は AltaVista Search が文書の類似度を効率的に算出するために提案した min-wise 独立置換族 (min-wise independent permutation family; 最小値独立置換族) の特性と、実際にそれを使用した類似度の算出方法やランダムサンプリングの方法について書かれていた。紙面の多くが証明と置換族 $\mathcal{F}$ の大きさの下限を導くのに割かれていたので、min-wise 独立の定義をその意味するところを理解するのが主なところだった。
 
