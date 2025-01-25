@@ -3,8 +3,8 @@ title: "Paxos made Step-by-Step"
 emoji: "🛋️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Paxos","分散合意","分散システム"]
-published: false
-published_at: 2025-01-25 0:11
+published: true
+published_at: 2025-01-25 23:20
 ---
 
 # Paxos made Step-by-Step
