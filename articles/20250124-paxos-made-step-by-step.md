@@ -7,7 +7,7 @@ published: true
 published_at: 2025-01-25 23:20
 ---
 
-# Paxos made Step-by-Step / Paxos の動作をステップバイステップで見る
+# Paxos made Step-by-Step
 
 ## 1. Introduction
 
