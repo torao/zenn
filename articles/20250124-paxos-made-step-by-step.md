@@ -27,7 +27,7 @@ A, B, C, D, E の 5 つのノードが存在する Paxos 合意クラスタに�
 
 A はまず自身の**世代クロック**から世代番号を取得し (この場合は初期状態なので 1)、自分を含むすべての Acceptor に **Prepare リクエスト** を送信します。
 
-各 Acceptor は、受信した Prepare リクエストの世代番号と、自身がすでに Promise している世代 (Promised Generation) を比較します。Prepare リクエストの世代番号の方が大きい場合、Promise 済み世代をその世代番号に更新して Promise で応答します。また、このとき既に Accept している値が存在する場合は、その世代番号と Accept している値を Promise に追加して応答します。既により大きい値で Promise している場合、応答として拒否を返すか何も返しません。
+各 Acceptor は、受信した Prepare リクエストの世代番号と、自身がすでに Promise している世代 (Promised Generation) を比較します。Prepare リクエストの世代番号の方が大きい場合、Promise 済み世代をその世代番号に更新して Promise で応答します。また、このとき既に Accept している値が存在する場合は、その世代番号と Accept している値を Promise に追加して応答します。既により大きい値で Promise している場合は拒否を返します (あるいは応答しません)。
 
 さて、上のシーケンス図ではどのノードもまだ Promise していないため、A の Prepare リクエストに対して A, B, C は Promised Generation を [1,A] に更新して Promise を返しました。これで A は過半数の Promise が確保できたので Accept フェーズに移行します。
 
