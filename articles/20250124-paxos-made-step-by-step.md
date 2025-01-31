@@ -1,5 +1,5 @@
 ---
-title: "Paxos made Step-by-Step"
+title: "Made Paxos Step-by-Step"
 emoji: "🛋️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Paxos","分散合意","分散システム"]
@@ -7,7 +7,7 @@ published: true
 published_at: 2025-01-25 23:20
 ---
 
-# Paxos made Step-by-Step
+# Made Paxos Step-by-Step
 
 ## 1. Introduction
 
@@ -27,9 +27,9 @@ A, B, C, D, E の 5 つのノードが存在する Paxos 合意クラスタに�
 
 まずシーケンス図の左側から。ノード A はクライアントから name = alice を設定するリクエストを受け付けます。これにより A は **Proposer** になって Prepare フェーズが開始します。
 
-A はまず自身の**世代クロック**から世代番号を取得し (この場合は初期状態なので 1)、自分を含むすべての Acceptor に **Prepare リクエスト** を送信します。
+A は自身の**世代クロック**から世代番号を取得し (この場合は初期状態なので 1)、自分を含むすべての Acceptor に **Prepare リクエスト** を送信します。
 
-さて、上のシーケンス図ではどのノードもまだ Promise していないため、A の Prepare リクエストに対して A, B, C は Promised Generation を [1,A] に更新して Promise を返しました。これで A は過半数の Promise が確保できたので Accept フェーズに移行します。
+上のシーケンス図ではどのノードもまだ Promise していないため、A の Prepare リクエストに対して A, B, C は Promised Generation を [1,A] に更新して Promise を返しました。これで A は過半数の Promise が確保できたので Accept フェーズに移行します。
 
 それと並行して別のクライアントからノード E に対して name = elanor を設定するリクエストがありました。これによりノード E は Proposer となり、自身の世代クロックから世代番号 1 を取得し、E と D に Prepare リクエストを送ってそれぞれの Promised Generation が [1,E] に更新されました。
 
