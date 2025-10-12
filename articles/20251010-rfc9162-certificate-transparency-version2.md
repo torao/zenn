@@ -140,9 +140,9 @@ $$
 {\rm subproof}(m, D_{0:n}, b) \to {\rm NodeList}
 $$
 
-CT の文書に現われる*完全性フラグ $b$* の意味はヒューリスティックでやや解釈が難しいところです。これは、再帰の基底で $b={\tt true}$ になっていた場合、クライアントはその部分木のルートハッシュ $r(D_{0:m})$ を既に知っているはず、つまり、そのノードは要求のあった増分証明の元の木構造 $T_1$ のルートノードなので、基底の位置のノードは証明に含める必要はないことを意味しており、したがって証明に含める必要がないことを示しています。
+CT の文書に現われる*完全性フラグ $b$* の意味はヒューリスティックでやや解釈が難しいところです。これは、再帰の基底で $b={\tt true}$ になっていた場合、クライアントはその部分木のルートハッシュ $r(D_{0:m})$ を既に知っているはず、つまり、そのノードは要求のあった増分証明の元の木構造 $T_1$ のルートノードなので、その位置以下のノードは証明に含める必要はないことを意味います。
 
-${\rm subproof}$ は目的の葉ノードに向かって木構造を下りながら経路近傍のノードを収集する。増分証明 $\pi_{n_1,n_2}$ は以下のように表すことができます。
+${\rm subproof}$ は目的の葉ノードに向かって木構造を下りながら経路近傍のノードを収集します。増分証明 $\pi_{n_1,n_2}$ は以下のように表すことができます。
 
 $$
 \pi_{n_1,n_2} = {\rm subproof}(n_1,D_{0:n_2},{\tt true})
@@ -152,8 +152,8 @@ $$
 
 $$
 {\rm subproof}(m, D_{0:n}, b) = \begin{cases}
-{\rm subproof}(m, D_{0:k}, b)\ \oplus\ {r(D_{k:n})} & \text{if } m \leq k \text{; 左枝に含まれる}\\
-{\rm subproof}(m - k, D_{k:m}, {\tt false})\ \oplus\ r(D_{0:k}) & \text{if } m > k \text{; 右枝に含まれる}
+{\rm subproof}(m, D_{0:k}, b)\ \oplus\ {r(D_{k:n})} & \text{if } m \leq k\\
+{\rm subproof}(m - k, D_{k:m}, {\tt false})\ \oplus\ r(D_{0:k}) & \text{if } m > k
 \end{cases}
 $$
 
@@ -234,8 +234,6 @@ $$
 ## まとめ: 改ざん防止を実現する追記専用のデータ構造
 
 Certificate Transparency (CT) の基盤となるマークルツリー (履歴ツリー) は、CA や証明書に依存するインターネットの信頼性を確保するための、監査可能な改ざん防止ログ機構として効率的な設計です。この構造の最も重要な特徴は、ログのサイズ $N$ に対数的なサイズと時間で証明を生成/検証できる点にあります。これらはネットワークコストを抑えつつ、迅速に検証プロトコルを完了することができるため、所属証明と増分証明の現実的な適用に寄与しています。
-
-## 参考文献
 
 [^1]: MERKLE, Ralph C. A certified digital signature. In: Conference on the Theory and Application of Cryptology. New York, NY: Springer New York, 1989. p. 218-238.
 [^2]: CROSBY, Scott A.; WALLACH, Dan S. [Efficient data structures for tamper-evident logging](https://static.usenix.org/event/sec09/tech/full_papers/crosby.pdf). In: USENIX security symposium. 2009. p. 317-334.
