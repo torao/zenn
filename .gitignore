@@ -6,3 +6,4 @@ node_modules/
 *.bkp
 *.log
 *.aux
+*.af~lock~

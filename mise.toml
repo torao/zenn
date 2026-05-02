@@ -1,0 +1,5 @@
+[tools]
+node = 'latest'
+
+[tasks.preview]
+run = "npx zenn preview"
