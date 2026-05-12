@@ -431,15 +431,15 @@ AI は与えられた問いに対して高品質の答えを返します。し�
 
 ## おわりに
 
-この記事では、エンジニアの「やり方の違い」に圧縮型と展開型という名前を付け、その違いが認知戦略の構造上の差異から生じていることを示しました。ここでは個性のように書きましたが、カーネマンの Fast & Slow[^4] のように、実際は一人の人に内在する 2 つの異なる認知システムのように思います。
+この記事では、エンジニアの「やり方の違い」に圧縮型と展開型という名前を付け、その違いの多くが認知戦略の構造上の差異から生じている可能性を指摘しました。ここでは個性のように書きましたが、カーネマンの Fast & Slow[^4] のように、実際は一人の人に内在する 2 つの異なる認知システムのように思います。
 
-わたしたちは多様な認知戦略を持つ人間どうしであることは避けられません。避けられないなら、理解する方が得です。「あの人はなぜああなのか」を性格や能力のせいにするのではなく、認知戦略の違いとして捉え直すだけで、日常の摩擦コストは確実に下がります。またチームリーダーは、片方の認知戦略をもう一方が押しつけられる構造にしないようにうまく調整すべきです。
+わたしたちは多様な認知戦略を持つ人間どうしであることは避けられません。避けられないなら、理解する方が得です。「あの人はなぜああなのか」を性格や能力のせいにするのではなく、認知戦略の違いとして捉え直すだけで、日常の摩擦コストは確実に下がり何ができるかを考えるヒントとなります。またチームリーダーは、片方の認知戦略をもう一方が押しつけられる構造にしないようにうまく調整すべきです。
 
 圧縮型は本質を見出す力、展開型は歪みを見出す力。この二つが補完関係にあることを理解することが、チームの認知能力を最大化する第一歩です。
 
 ところで、あなたはこの記事をどう読みましたか? 図で把握して表と強調で補完して読んだか、文章を圧縮しながら読んでいたか。それがあなたの認知タイプかもしれません。
 
-[^1]: [Perception in chess](https://www.sciencedirect.com/science/article/abs/pii/0010028573900042?via%3Dihub) (1973)
-[^2]: [Visualizers versus verbalizers: Effects of cognitive style on learning with texts and pictures – An eye-tracking study](https://www.sciencedirect.com/science/article/pii/S0747563216307695) (2017)
-[^3]: ピーター・ドラッカー, [マネジメント](https://amzn.to/4uHMMtE) (2001)
-[^4]: ダニエル･カーネマン, [ファスト&スロー](https://amzn.to/4tvPHEH) (2014)
+[^1]: William G. Chase, Herbert A. Simon. [Perception in chess](https://www.sciencedirect.com/science/article/abs/pii/0010028573900042?via%3Dihub) (1973)
+[^2]: KOĆ-JANUCHTA, Marta, et al. [Visualizers versus verbalizers: Effects of cognitive style on learning with texts and pictures – An eye-tracking study](https://www.sciencedirect.com/science/article/pii/S0747563216307695) (2017)
+[^3]: ピーター・ドラッカー. [マネジメント](https://amzn.to/4uHMMtE) (2001)
+[^4]: ダニエル･カーネマン. [ファスト&スロー](https://amzn.to/4tvPHEH) (2014)
